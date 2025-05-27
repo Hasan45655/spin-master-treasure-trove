@@ -1,12 +1,26 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import IndexPage from "./pages/Index";
+import EventsPage from "./pages/Events";
+import StickersPage from "./pages/Stickers";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header"; // Import the Header
 
 const queryClient = new QueryClient();
+
+// Layout component to include Header
+const AppLayout = () => (
+  <div className="flex flex-col min-h-screen bg-background">
+    <Header />
+    <main className="flex-grow">
+      <Outlet /> {/* This is where nested routes will render their element */}
+    </main>
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -15,9 +29,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route element={<AppLayout />}> {/* Use AppLayout for routes that need the header */}
+            <Route path="/" element={<IndexPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/stickers" element={<StickersPage />} />
+          </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          {/* NotFound route can be outside AppLayout if it doesn't need the header, or inside if it does */}
+          <Route path="*" element={<NotFound />} /> 
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

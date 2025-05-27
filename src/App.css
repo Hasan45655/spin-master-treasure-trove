@@ -1,10 +1,19 @@
+
+/* Remove default styles from App.css or ensure they don't conflict */
+/* For instance, the #root styles might not be needed for a full-page app */
+
+/* Keep this if you want a max-width container for content, 
+   but for a full-width site, you might remove it or apply it selectively. */
+/*
 #root {
-  max-width: 1280px;
+  max-width: 1280px; 
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
+*/
 
+/* Remove or comment out logo styles if not used */
+/*
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,3 +49,4 @@
 .read-the-docs {
   color: #888;
 }
+*/

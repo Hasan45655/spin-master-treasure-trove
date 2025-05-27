@@ -1,7 +1,8 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
+	darkMode: ["class"], // Can be 'media' or 'class'. We'll use class and set it on html.
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        heading: ['"Pirata One"', 'cursive'],
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
