@@ -5,44 +5,44 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%; /* Default dark mode background from shadcn */
-    --foreground: 210 40% 98%; /* Default dark mode foreground */
+    --background: 0 0% 100%; /* white */
+    --foreground: 240 10% 3.9%; /* dark-blue/almost-black for text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 98%; /* very light grey for cards */
+    --card-foreground: 240 10% 3.9%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 42 90% 58%; /* Gold: hsl(42, 90%, 58%) */
-    --primary-foreground: 222.2 84% 4.9%; /* Dark text for gold buttons */
+    --primary: 45 100% 51%;  /* gold hsl(45, 100%, 51%) */
+    --primary-foreground: 240 10% 3.9%; /* dark text on gold */
 
-    --secondary: 174 57% 52%; /* Teal: hsl(174, 57%, 52%) */
-    --secondary-foreground: 222.2 84% 4.9%; /* Dark text for teal buttons */
+    --secondary: 175 70% 40%; /* teal hsl(175, 70%, 40%) */
+    --secondary-foreground: 0 0% 100%; /* light text on teal */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 96.1%; /* light grey for muted backgrounds */
+    --muted-foreground: 240 3.8% 46.1%; /* grey for muted text */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 94.1%; /* slightly darker grey for accent */
+    --accent-foreground: 240 5.9% 10%; /* dark text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 25.5%; /* Darker border */
-    --input: 217.2 32.6% 17.5%;
-    --ring: 42 90% 58%; /* Gold for ring */
+    --border: 0 0% 89.8%; /* light grey border */
+    --input: 0 0% 93.9%; /* light grey input */
+    --ring: 45 100% 51%; /* gold for ring */
 
     --radius: 0.5rem;
   }
  
-  /* Forcing dark theme by default by applying dark class to html if not present */
-  /* We will manage this through a theme provider later if needed */
-  html {
-    @apply dark; /* Apply dark theme variables */
-  }
+  /* Remove the forced dark theme from html tag */
+  /* html {
+    @apply dark; 
+  } */
 
-  /* Custom theme for Spin Master Treasure Trove */
+  /* The .dark class definition can remain for users who might want to implement a theme switcher later,
+     but it won't be active by default anymore. */
   .dark {
     --background: 240 10% 3.9%; /* very-dark-blue/almost-black hsl(240, 10%, 3.9%) */
     --foreground: 0 0% 90%;    /* light-gray hsl(0, 0%, 90%) */
@@ -81,8 +81,6 @@
   body {
     @apply bg-background text-foreground font-sans;
     min-height: 100vh;
-    /* Optional: Add a subtle treasure map background texture */
-    /* background-image: url('/path-to-your-treasure-map-texture.png'); */
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;

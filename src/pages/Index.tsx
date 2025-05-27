@@ -49,7 +49,7 @@ const IndexPage = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-12">
         <Gift className="mx-auto h-16 w-16 text-primary mb-4 animate-pulse" />
-        <h1 className="text-6xl font-heading text-primary tracking-wider drop-shadow-lg">Daily Treasures</h1>
+        <h1 className="text-6xl font-heading text-primary tracking-wider drop-shadow-lg">Daily Rewards</h1>
         <p className="text-2xl text-muted-foreground mt-3">Your daily bounty of Coin Master Free Spins and Coins!</p>
         <p className="text-md text-foreground/70 mt-1">Click "Collect Now" to claim your rewards.</p>
       </div>
@@ -69,7 +69,7 @@ const IndexPage = () => {
       </div>
 
       <footer className="text-center mt-16 py-8 border-t border-border/50">
-        <p className="text-muted-foreground">Spin Master Treasure Trove - Your #1 source for Coin Master rewards.</p>
+        <p className="text-muted-foreground">Spin Master Rewards - Your #1 source for Coin Master rewards.</p>
         <p className="text-xs text-muted-foreground/70 mt-1">
           All trademarks are property of their respective owners. This site is not affiliated with Coin Master.
         </p>

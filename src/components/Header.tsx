@@ -8,7 +8,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors">
           <Gem size={36} className="transform -rotate-12" />
-          <h1 className="text-3xl font-heading tracking-wider">Spin Master Treasure Trove</h1>
+          <h1 className="text-3xl font-heading tracking-wider">Spin Master Rewards</h1>
         </Link>
         <div className="space-x-6">
           <Link to="/" className="text-lg text-foreground hover:text-primary transition-colors font-medium">
@@ -19,6 +19,9 @@ const Header = () => {
           </Link>
           <Link to="/stickers" className="text-lg text-foreground hover:text-primary transition-colors font-medium">
             Stickers
+          </Link>
+          <Link to="/spin-wheel" className="text-lg text-foreground hover:text-primary transition-colors font-medium">
+            Spin Wheel
           </Link>
         </div>
       </nav>
