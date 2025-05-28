@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Gem, Menu } from "lucide-react";
+import { Gem, Menu, ShieldCheck } from "lucide-react"; // Added ShieldCheck for privacy policy
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
@@ -17,6 +17,7 @@ const Header = () => {
     { to: "/events", label: "Events" },
     { to: "/stickers", label: "Stickers" },
     { to: "/spin-wheel", label: "Spin Wheel" },
+    { to: "/privacy-policy", label: "Privacy Policy", icon: <ShieldCheck size={18} className="mr-2 inline-block" /> }, // Added Privacy Policy
   ];
 
   return (
@@ -44,16 +45,11 @@ const Header = () => {
               </button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-card p-0 pt-8">
-              {/* Optional: Add a close button inside the sheet if needed, though SheetClose on links is good */}
-              {/* <SheetClose asChild>
-                <Button variant="ghost" className="absolute top-4 right-4 px-2">
-                  <X size={24} />
-                </Button>
-              </SheetClose> */}
               <div className="flex flex-col space-y-1 p-4">
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.to}>
                     <Link to={item.to} className={mobileLinkClasses}>
+                      {item.icon && item.icon}
                       {item.label}
                     </Link>
                   </SheetClose>
@@ -65,6 +61,7 @@ const Header = () => {
           <div className="space-x-6">
             {navItems.map((item) => (
               <Link key={item.to} to={item.to} className={commonLinkClasses}>
+                {item.icon && <span className="mr-1 align-middle">{item.icon}</span>}
                 {item.label}
               </Link>
             ))}

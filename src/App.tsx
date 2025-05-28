@@ -10,6 +10,7 @@ import StickersPage from "./pages/Stickers";
 import SpinWheelPage from "./pages/SpinWheelPage";
 import AuthPage from "./pages/AuthPage"; // Import AuthPage
 import AdminPage from "./pages/AdminPage"; // Import AdminPage
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage"; // Import PrivacyPolicyPage
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import { useAuthSession } from "./hooks/useAuthSession"; // Import useAuthSession
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/stickers" element={<StickersPage />} />
             <Route path="/spin-wheel" element={<SpinWheelPage />} />
             <Route path="/auth" element={<AuthPage />} /> {/* Add route for AuthPage */}
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} /> {/* Add route for PrivacyPolicyPage */}
             <Route 
               path="/admin" 
               element={
