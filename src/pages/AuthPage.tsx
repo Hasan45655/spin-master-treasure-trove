@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast'; // Corrected import path
+import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const AuthPage = () => {
@@ -36,7 +36,6 @@ const AuthPage = () => {
       email, 
       password,
       options: {
-        // You can add email redirect URL here if needed for email confirmation
         // emailRedirectTo: `${window.location.origin}/`, 
       }
     });
@@ -44,14 +43,13 @@ const AuthPage = () => {
       toast({ title: 'Sign Up Failed', description: error.message, variant: 'destructive' });
     } else {
       toast({ title: 'Sign Up Successful', description: 'Please check your email to confirm your account.' });
-      // Optionally navigate or clear form
     }
     setLoading(false);
   };
 
   return (
     <div className="container mx-auto flex min-h-[calc(100vh-150px)] items-center justify-center px-4 py-12">
-      <Tabs defaultValue="login" className="w-[400px]">
+      <Tabs defaultValue="login" className="w-full max-w-md sm:w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="login">Login</TabsTrigger>
           <TabsTrigger value="signup">Sign Up</TabsTrigger>
